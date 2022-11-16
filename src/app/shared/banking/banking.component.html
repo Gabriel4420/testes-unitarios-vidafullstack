@@ -1,0 +1,21 @@
+<p>
+    <strong>Olá, Denner Troquatte </strong> <br />
+    Ag: 9999, CO: 99999-9
+</p>
+
+
+<p>
+    <input id="input-withdrawn" type="text" #withdrawn>
+    <button id="withdrawn" (click)="setWithdrawn(withdrawn.value)">Sacar</button>
+    Poupança: R$ <span id="getSavings">{{ getSavings }}</span>
+
+</p>
+
+<p>
+    <input id="input-deposit" type="text" #deposit>
+    <button id="deposit" (click)="setDeposit(deposit.value)">Depositar</button>
+    Carteira: R$ <span id="getWallet">{{ getWallet }}</span>
+
+</p>
+
+<app-list></app-list>
