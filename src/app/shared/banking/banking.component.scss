@@ -1,0 +1,74 @@
+.section--bankMain {
+  padding: 2.5rem;
+
+  header {
+    padding: 1.25rem;
+    hr {
+      padding: 0.1125rem;
+      background-color: rgb(196, 20, 20);
+      margin-top: -20px;
+      border: none;
+    }
+    h1 {
+      color: #111;
+      font-size: 3.125rem;
+      font-weight: 400;
+    }
+
+    p {
+      font-size: 1.3625rem;
+    }
+  }
+}
+
+.input--area {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 0.9375rem;
+
+  padding: 0.325rem;
+  input {
+    padding: 0.325rem;
+    padding-left: 15px;
+    border: 1px solid #333;
+    color: rgb(0, 153, 255);
+    outline-color: rgb(0, 153, 255);
+    outline-width: 0.625rem;
+    border-radius: 50px;
+    background-color: #222;
+    width: 25%;
+    box-shadow: -3px 1px 12px -1px #7a7a7a;
+  }
+
+  input::placeholder {
+    font-weight: bold;
+    color: rgb(206, 203, 203);
+  }
+
+  .result--area {
+    padding-top: 8px;
+    color: #fff;
+
+    span {
+      color: rgb(196, 20, 20);
+    }
+  }
+
+  button {
+    margin-left: 0.325rem;
+    color: rgb(196, 20, 20);
+    font-size: 1rem;
+    border: 1px solid rgb(196, 20, 20);
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0.325rem;
+    box-shadow: -3px 1px 12px -1px #7a7a7a;
+    border-radius: 10px;
+  }
+
+  button:hover {
+    background-color: rgb(196, 20, 20);
+    color: white;
+  }
+}

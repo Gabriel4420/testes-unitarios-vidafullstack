@@ -1,4 +1,9 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { of } from 'rxjs/internal/observable/of'
+import { Investiments } from '../../model/investiments'
+import { MOCK_LIST } from '../../services/list-investiments.mock'
+import { ListInvestimentsService } from '../../services/list-investiments.service'
 
 import { ListComponent } from './list.component'
 
@@ -6,12 +11,18 @@ describe('ListComponent', () => {
   let component: ListComponent
   let fixture: ComponentFixture<ListComponent>
 
+  let service: ListInvestimentsService
+
+  const mockList: Array<Investiments> = MOCK_LIST
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ListComponent],
+      imports: [HttpClientTestingModule],
     }).compileComponents()
 
     fixture = TestBed.createComponent(ListComponent)
+    service = TestBed.inject(ListInvestimentsService)
     component = fixture.componentInstance
     fixture.detectChanges()
   })
@@ -21,16 +32,37 @@ describe('ListComponent', () => {
   })
 
   it('(U) investiments: should list investiments', () => {
-    let investiments = component.investiments
-    expect(investiments.length).toBe(4)
-    expect(investiments[0].name).toContain('Itaú')
-    expect(investiments[3].name).toContain('Inter')
+    
+    spyOn(service, 'list').and.returnValue(of(mockList))
+    
+    component.ngOnInit()
+
+    fixture.detectChanges()
+
+    expect(service.list).toHaveBeenCalledWith()
+
+
+    expect(component.investiments.length).toBe(4)
+    expect(component.investiments[0].name).toContain('Itaú')
+    expect(component.investiments[3].name).toContain('Inter')
   })
 
   it('(I) should list investiments', () => {
-    let investiments = fixture.debugElement.nativeElement.querySelectorAll('.list-items')
+    
+    spyOn(service, 'list').and.returnValue(of(mockList))
+    
+    component.ngOnInit()
 
-    expect(investiments.length).toBe(4)
+    fixture.detectChanges()
+
+    expect(service.list).toHaveBeenCalledWith()
+
+    
+    let investiments = fixture.debugElement.nativeElement.querySelectorAll(
+      '.list-items',
+    )
+
+    expect(investiments.length).toEqual(4)
     expect(investiments[0].textContent.trim()).toEqual('Itaú : R$ 100')
     expect(investiments[3].textContent.trim()).toEqual('Inter : R$ 100')
   })

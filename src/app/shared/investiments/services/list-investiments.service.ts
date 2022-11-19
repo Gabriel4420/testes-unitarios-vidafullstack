@@ -13,7 +13,7 @@ export class ListInvestimentsService {
 
   constructor(private http: HttpClient) {}
 
-  public list(): Observable<Investiments> {
-    return this.http.get<Investiments>(this.url).pipe(map((res) => res))
+  public list(): Observable<Array<Investiments>> {
+    return this.http.get<Array<Investiments>>(this.url).pipe(map((res) => res))
   }
 }

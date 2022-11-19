@@ -1,21 +1,41 @@
-<p>
-    <strong>Olá, Denner Troquatte </strong> <br />
-    Ag: 9999, CO: 99999-9
-</p>
+<main class="section--bankMain">
+
+    <header>
+        <h1> <strong>Olá {{getUser}}, </strong> Bem vindo ao seu banco favorito !</h1>
+        <hr />
+        <p> Ag: <strong>9999</strong>, CO: <strong> 99999-9 </strong></p>
+
+        <div>
+            <p>Aqui é o banco aonde você pode apenas retirar um dinheiro da carteira e transferir para poupança, vice e versa</p>
+        </div>
+    </header>
 
 
-<p>
-    <input id="input-withdrawn" type="text" #withdrawn>
-    <button id="withdrawn" (click)="setWithdrawn(withdrawn.value)">Sacar</button>
-    Poupança: R$ <span id="getSavings">{{ getSavings }}</span>
+    <div class="input--area">
+        <div>
+            <input title="Faça um saque" placeholder="Digite o quanto deseja sacar" id="input-withdrawn" type="text"
+                #withdrawn>
+            <button id="withdrawn" (click)="setWithdrawn(withdrawn.value)">Sacar para carteira</button>
+        </div>
+        <div class="result--area">
+            Poupança: <span id="getSavings">R$ {{ getSavings }}</span>
+        </div>
 
-</p>
+    </div>
 
-<p>
-    <input id="input-deposit" type="text" #deposit>
-    <button id="deposit" (click)="setDeposit(deposit.value)">Depositar</button>
-    Carteira: R$ <span id="getWallet">{{ getWallet }}</span>
+    <div class="input--area">
+        <div>
+            <input title="Faça um deposito" placeholder="Digite o quanto deseja depositar" id="input-deposit"
+                type="text" #deposit>
+            <button id="deposit" (click)="setDeposit(deposit.value)">Depositar na poupança</button>
+        </div>
+        <div class="result--area">
+            Carteira: <span id="getWallet"> R$ {{ getWallet }}</span>
+        </div>
 
-</p>
+    </div>
+</main>
+
+
 
 <app-list></app-list>
