@@ -1,74 +1,98 @@
-.section--bankMain {
-  padding: 2.5rem;
+@import '../../../styles.scss';
+:host {
+  .section--bankMain {
+    padding: 2.5rem;
 
-  header {
-    padding: 1.25rem;
-    hr {
-      padding: 0.1125rem;
+    header {
+      padding: 1.25rem;
+      hr {
+        padding: 0.1125rem;
+        background-color: rgb(196, 20, 20);
+        margin-bottom: 0.3125rem;
+        border: none;
+      }
+      h1 {
+        color: var(--secondary);
+        font-size: 2.625rem;
+        font-weight: 400;
+      }
+
+      p {
+        font-size: 1.3625rem;
+        padding: 0.625rem;
+        color: var(--secondary);
+      }
+    }
+  }
+
+  .input--area {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0.9375rem;
+
+    padding: 0.325rem;
+    input {
+      padding: 0.325rem;
+      padding-left: 0.9375rem;
+      border: 0.188rem solid var(--primary);
+      color: rgb(0, 153, 255);
+      outline-color: rgb(0, 153, 255);
+      outline-width: 0.625rem;
+      border-radius: 3.125rem;
+      background-color: var(--input);
+      width: 25%;
+      box-shadow: -0.188rem 0.063rem 0.75rem -0.188rem #7a7a7a;
+      flex: 1;
+    }
+
+    input::placeholder {
+      font-weight: bold;
+      color: rgb(156, 156, 156);
+    }
+
+    .result--area {
+      padding-top: 1.5rem;
+      padding-left: 0.625rem;
+      color: var(--secondary);
+
+      span {
+        color: rgb(248, 97, 97);
+        font-weight: bold;
+      }
+    }
+
+    button {
+      margin-left: 0.325rem;
+      color: var(--button);
+      font-size: 1rem;
+      border: 0.188rem solid rgb(196, 20, 20);
+      background-color: transparent;
+      cursor: pointer;
+      padding: 0.325rem;
+      box-shadow: -0.188rem 0.063rem 0.75rem -0.188rem #7a7a7a;
+      border-radius: 0.625rem;
+    }
+
+    button:hover {
       background-color: rgb(196, 20, 20);
-      margin-top: -20px;
-      border: none;
-    }
-    h1 {
-      color: #111;
-      font-size: 3.125rem;
-      font-weight: 400;
-    }
-
-    p {
-      font-size: 1.3625rem;
-    }
-  }
-}
-
-.input--area {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-left: 0.9375rem;
-
-  padding: 0.325rem;
-  input {
-    padding: 0.325rem;
-    padding-left: 15px;
-    border: 1px solid #333;
-    color: rgb(0, 153, 255);
-    outline-color: rgb(0, 153, 255);
-    outline-width: 0.625rem;
-    border-radius: 50px;
-    background-color: #222;
-    width: 25%;
-    box-shadow: -3px 1px 12px -1px #7a7a7a;
-  }
-
-  input::placeholder {
-    font-weight: bold;
-    color: rgb(206, 203, 203);
-  }
-
-  .result--area {
-    padding-top: 8px;
-    color: #fff;
-
-    span {
-      color: rgb(196, 20, 20);
+      color: var(--button-hover);
     }
   }
 
-  button {
-    margin-left: 0.325rem;
-    color: rgb(196, 20, 20);
-    font-size: 1rem;
-    border: 1px solid rgb(196, 20, 20);
-    background-color: transparent;
-    cursor: pointer;
-    padding: 0.325rem;
-    box-shadow: -3px 1px 12px -1px #7a7a7a;
-    border-radius: 10px;
+  .input--content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  button:hover {
-    background-color: rgb(196, 20, 20);
-    color: white;
+  .input--globals {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .area2 {
+    margin-top: 1.625rem;
   }
 }

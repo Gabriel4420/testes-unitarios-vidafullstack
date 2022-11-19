@@ -1,3 +1,4 @@
+<app-header></app-header>
 <main class="section--bankMain">
 
     <header>
@@ -6,34 +7,60 @@
         <p> Ag: <strong>9999</strong>, CO: <strong> 99999-9 </strong></p>
 
         <div>
-            <p>Aqui é o banco aonde você pode apenas retirar um dinheiro da carteira e transferir para poupança, vice e versa</p>
+            <p>Aqui é o banco aonde você pode operar sua carteira de poupanças</p>
         </div>
     </header>
 
+    <div class="input--globals">
+        <div class="input--area">
+            <div class="input--content">
+                <input title="Faça um saque" placeholder="Digite o quanto deseja sacar para a carteira"
+                    id="input-withdrawn" type="text" #withdrawn>
+                <button id="withdrawn" (click)="setWithdrawn(withdrawn.value)">Sacar para carteira</button>
+            </div>
+            <div class="result--area">
+                <button *ngIf="!getShow" type="button" (click)="showSavings()">Mostrar valor da poupança</button>
+                <p *ngIf="getShow"> Poupança: <span id="getSavings">R$ {{ getSavings }}</span></p>
+            </div>
 
-    <div class="input--area">
-        <div>
-            <input title="Faça um saque" placeholder="Digite o quanto deseja sacar" id="input-withdrawn" type="text"
-                #withdrawn>
-            <button id="withdrawn" (click)="setWithdrawn(withdrawn.value)">Sacar para carteira</button>
         </div>
-        <div class="result--area">
-            Poupança: <span id="getSavings">R$ {{ getSavings }}</span>
+
+        <div class="input--area">
+            <div class="input--content">
+                <input title="Faça um deposito" placeholder="Digite o quanto deseja depositar na poupança"
+                    id="input-deposit" type="text" #deposit>
+                <button id="deposit" (click)="setDeposit(deposit.value)">Depositar na poupança</button>
+            </div>
+            <div class="result--area" *ngIf="getAlert">
+                <span id="getSavings">🚫 valor indisponivel para deposito, por favor verifique sua carteira e tente
+                    novamente mais tarde</span>
+            </div>
+
         </div>
 
     </div>
 
-    <div class="input--area">
-        <div>
-            <input title="Faça um deposito" placeholder="Digite o quanto deseja depositar" id="input-deposit"
-                type="text" #deposit>
-            <button id="deposit" (click)="setDeposit(deposit.value)">Depositar na poupança</button>
+
+    <div class="input--globals">
+        <div class="input--area area2">
+            <div class="input--content">
+                <input title="Faça um saque" placeholder="Digite o quanto deseja depositar em sua carteira"
+                    id="input-withdrawn" type="text" #wallet>
+                <button id="withdrawn" (click)="setWallet(wallet.value)">Depositar na carteira</button>
+            </div>
+            <div class="result--area">
+                Valor Atual da carteira : <span id="getSavings">R$ {{ getWallet }}</span>
+            </div>
+
+
+
         </div>
-        <div class="result--area">
-            Carteira: <span id="getWallet"> R$ {{ getWallet }}</span>
-        </div>
+        <div class="input--area"></div>
+
 
     </div>
+
+
 </main>
 
 

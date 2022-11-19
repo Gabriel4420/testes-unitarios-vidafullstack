@@ -1,0 +1,51 @@
+@import '../../../../../styles.scss';
+
+:host {
+  .principal--list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    hr {
+      padding: 0.1125rem;
+      background-color: rgb(196, 20, 20);
+      margin-bottom: 0.3125rem;
+      border: none;
+      width: 20%;
+    }
+
+    h1 {
+      color: var(--secondary);
+      font-size: 2.625rem;
+      font-weight: 400;
+    }
+  }
+
+  .table--area {
+    display: flex;
+    width: 50%;
+    margin: 0.625rem;
+    table.GeneratedTable {
+      width: 100%;
+      background-color: var(--table-bg-color);
+      border-collapse: collapse;
+      border-width: 0.125rem;
+      border-color: #c41414;
+      border-style: solid;
+      color: var(--table-text-color);
+    }
+
+    table.GeneratedTable td,
+    table.GeneratedTable th {
+      border-width: 0.125rem;
+      border-color: #c41414;
+      border-style: solid;
+      padding: 0.1875rem;
+    }
+
+    table.GeneratedTable thead {
+      background-color: #c41414;
+    }
+  }
+}

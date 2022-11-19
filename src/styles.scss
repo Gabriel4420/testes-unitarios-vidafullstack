@@ -1,4 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #f2f2f2;
+  --secondary: #333;
+  --button: rgb(196, 20, 20);
+  --button-hover: var(--primary);
+  --input: transparent;
+  --table-text-color: var(--primary);
+  --table-bg-color: var(--secondary);
+}
+
+:root .dark-theme {
+  --primary: #333;
+  --secondary: #f2f2f2;
+  --button: rgb(240, 54, 54);
+  --button-hover: var(--secondary);
+  --input: #222;
+  --table-text-color: var(--secondary);
+  --table-bg-color: var(--primary);
+}
+
 body {
-  background-color: #333;
+  background-color: var(--primary);
 }

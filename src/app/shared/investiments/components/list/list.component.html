@@ -1,8 +1,21 @@
-<hr>
-<h1>Investimentos</h1>
+<div class="principal--list">
+    <hr>
+    <h1>Investimentos</h1>
 
-<ul>
-    <li *ngFor="let investiment of investiments" class="list-items">
-        {{investiment.name}} : R$ {{investiment.value}}
-    </li>
-</ul>
+    <div class="table--area">
+        <table class="GeneratedTable">
+            <thead>
+                <tr>
+                    <th>Nome Investimento</th>
+                    <th>Valor Investimento</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let investiment of investiments">
+                    <td> {{investiment.name}}</td>
+                    <td> {{investiment.value}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -12,6 +12,10 @@ export class BankingComponent implements OnInit {
 
   private user: string = 'Gabriel Rodrigues'
 
+  private show: boolean = false
+
+  private alert: boolean = false
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -28,6 +32,14 @@ export class BankingComponent implements OnInit {
     return this.user
   }
 
+  get getShow(): boolean {
+    return this.show
+  }
+
+  get getAlert(): boolean {
+    return this.alert
+  }
+
   public setWithdrawn(value: string): number | undefined {
     const withdrawn = Number(value)
 
@@ -40,12 +52,29 @@ export class BankingComponent implements OnInit {
     return (this.wallet += withdrawn)
   }
 
+  public showSavings(): boolean {
+    return (this.show = !this.show)
+  }
+
+  public setWallet(value: string): number | undefined {
+    const walletValue = Number(value)
+
+    if (isNaN(walletValue)) {
+      return
+    }
+
+    return (this.wallet += walletValue)
+  }
+
   public setDeposit(value: string): number | undefined {
     const deposit = Number(value)
 
     if (isNaN(deposit) || this.wallet < deposit) {
+      this.alert = !this.alert
+      setTimeout(() => (this.alert = false), 2000)
       return
     }
+
     this.wallet -= deposit
     return (this.savings += deposit)
   }
