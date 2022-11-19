@@ -42,6 +42,20 @@
 
 A proposta deste repositório é manter o modulo de estudos sobre testes unitários utilizando jasmine no angular 2(v14+).
 
+Abaixo segue a lista do que foi feito e aprendido neste modulo
+
+✅ Mocks 
+
+✅ Cobertura de testes
+
+✅ Testes de unidade em componentes 
+
+✅ Testes de tela em componentes 
+
+✅ Testes dentro de um service
+
+✅ correções de pequenos bugs
+
 ---
 
 ## 👨‍💻️ Tecnogias utilizadas
