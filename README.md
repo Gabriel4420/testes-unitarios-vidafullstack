@@ -80,7 +80,7 @@ Para instalar as dependências e iniciar o projeto, você pode utilizar o yarn o
 ```bash
   # instalar as dependências e node-modules
   ❯ yarn
-  
+
   # Iniciar o projeto
   ❯ yarn test
 
